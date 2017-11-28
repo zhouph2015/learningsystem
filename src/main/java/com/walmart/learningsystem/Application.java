@@ -196,6 +196,7 @@ public class Application {
 	
 	private static void editCourse() throws IOException {
 		System.out.println("\nYou have selected to edit a course");
+		showtAllCourses();
 		int id = selectCourseID();
 		while (!courseRepository.containsCourse(id)) {
 			System.out.println("\nOur Learning System Does Not Contain This Course, Please Select Another Course ID");
@@ -349,7 +350,7 @@ public class Application {
 		String input = reader.readLine();
 
 		while (!UiInput.validInputOfIDList(input)) {
-			System.out.print("Please add a list of course id (comma separated) to your favorite list:");
+			System.out.print("Invalid input, Please add a list of course id (comma separated) to your favorite list:");
 			input = reader.readLine();
 		}
 		String[] array = input.split(",");
